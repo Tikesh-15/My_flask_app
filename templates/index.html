@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Choco Compressor - Image Resize Tool</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+
+<nav>
+  <div class="logo">Choco Compressor</div>
+  <ul>
+    <li><a href="#home" tabindex="1">Home</a></li>
+    <li><a href="#features" tabindex="2">Features</a></li>
+    <li><a href="#compress" tabindex="3">Compress</a></li>
+    <li><a href="#blog" tabindex="4">Blog</a></li>
+    <li><a href="#faq" tabindex="5">FAQ</a></li>
+    <li><a href="#feedback" tabindex="6">Feedback</a></li>
+  </ul>
+</nav>
+
+<header id="home" class="hero-section">
+  <div class="hero-content">
+    <h1>Choco Compressor</h1>
+    <p>Quick & Easy Image Resizer for GIF, JPG, PNG, BMP</p>
+    <a href="#compress" class="btn-primary" tabindex="7">Start Compressing Now</a>
+  </div>
+</header>
+
+<main>
+
+  <section id="features" class="features-section">
+    <h2>Why Choose Choco Compressor?</h2>
+    <ul>
+      <li>Supports GIF, JPG, PNG, and BMP image formats</li>
+      <li>Fast and efficient resizing without losing quality</li>
+      <li>Simple and clean user interface</li>
+      <li>Set your target size in KB easily</li>
+      <li>All files are processed securely and deleted immediately</li>
+      <li>Works directly in your browser - no downloads needed</li>
+    </ul>
+ <section id="compress" class="compress-form">
+  <h2>Compress Your Image</h2>
+  <form id="compressForm" method="post" enctype="multipart/form-data" action="/compress">
+    <input type="file" name="file" accept=".gif, .jpg, .jpeg, .png, .bmp" required aria-label="Select image to compress" tabindex="8" />
+    <input type="number" name="target_size_kb" min="10" max="10000" placeholder="Target size (KB)" required aria-label="Enter target size in kilobytes" tabindex="9" />
+    <button type="submit" tabindex="10" id="compressBtn">Compress</button>
+  </form>
+  <div class="download-section">
+    <!-- Compressed file download link appears here dynamically -->
+  </div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</section>
+
+  <section id="blog" class="blog-section"><section class="blog-section with-image-blog">
+  <article class="image-blog">
+    <h2>Latest Blog: All About Choco Compressor</h2>
+    <article>
+      <h3>Introducing Choco Compressor: Your Go-To Image Resizer</h3>
+      <p>Choco Compressor is a powerful yet simple tool designed specifically for resizing GIF, JPG, PNG, and BMP images. Whether you want to reduce file size for faster uploads or save storage space, Choco Compressor gets the job done quickly without compromising image quality.</p>
+      <h4>Features at a glance:</h4><img src="{{ url_for('static', filename='image/ChatGPT Image May 27, 2025, 08_19_59 PM.png') }}" alt="Blog Image" />
+
+      <ul>
+        <li>Fast image processing with smart compression algorithms</li>
+        <li>Customize your target file size easily</li>
+        <li>Supports popular image formats used on websites and social media</li>
+        <li>Secure and privacy-friendly — files are not stored permanently</li>
+        <li>User-friendly design accessible on any device</li>
+      </ul>
+      <p>Whether you’re a student, professional, or just someone who wants to optimize images, Choco Compressor makes resizing hassle-free. Try it out and see the difference!</p>
+   </article>
+    
+<img src="{{ url_for('static', filename='image/ChatGPT Image May 27, 2025, 08_19_54 PM.png') }}" alt="Image 2" style="max-width:300px; border-radius:12px; display:inline-block;">
+
+
+    <div class="image-blog-content">
+      <h3>Smart Compression for Everyone</h3>
+      <p>Our advanced compression algorithm ensures your files stay sharp, clear, and lightweight. Say goodbye to bloated files!</p>
+      <a href="#" class="btn-primary">Try Now</a>
+    </div>
+  </article>
+</section>
+
+  </section>
+
+  <section id="faq" class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <details>
+      <summary>Which image formats does Choco Compressor support?</summary>
+      <p>It supports GIF, JPG, PNG, and BMP image formats.</p>
+    </details>
+    <details>
+      <summary>Will image quality be affected?</summary>
+      <p>We use efficient algorithms to keep the image quality as high as possible even after compression.</p>
+    </details>
+    <details>
+      <summary>Is my data safe?</summary>
+      <p>Yes, files are processed securely and deleted right after compression.</p>
+    </details>
+  </section>
+
+ <!-- templates/index.html -->
+  
+ <section id="feedback" class="feedback-section">
+    <h2>Feedback</h2>
+    <form method="post" action="/feedback">
+      <input type="text" name="name" placeholder="Your Name" required aria-label="Enter your name" tabindex="11" />
+      <input type="email" name="email" placeholder="Your Email" required aria-label="Enter your email" tabindex="12" />
+      <textarea name="message" rows="4" placeholder="Your Feedback" required aria-label="Enter your feedback" tabindex="13"></textarea>
+      <button type="submit" tabindex="14">Send Feedback</button>
+    </form>
+  </section>
+
+
+</main>
+
+<!-- About project added here -->
+<section id="about-project" style="background-color:#f7f9fc; padding: 25px 20px; margin: 40px auto; border-radius: 10px; max-width: 900px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #2c3e50;">
+  <h2>About This Project</h2>
+  <p><strong>Developer Name:</strong> Tikesh Dewangan</p>
+  <p><strong>College Name:</strong> Govt. V.Y.T. Science College, Durg</p>
+  <p><strong>Project Name:</strong> Choco Compressor - Image Resize Tool</p>
+  <p>This project has been developed by Tikesh Dewangan, a student of Govt. V.Y.T. Science College, Durg. The tool provides a fast, easy, and efficient way to resize GIF, JPG, PNG, and BMP images directly in the browser without any downloads. It is designed to help users reduce image sizes without compromising on quality.</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Choco Compressor. All rights reserved.</p>
+  <p>Follow us: 
+    <a href="#" aria-label="Facebook" tabindex="15">Facebook</a> | 
+    <a href="#" aria-label="Twitter" tabindex="16">Twitter</a> | 
+    <a href="#" aria-label="Instagram" tabindex="17">Instagram</a>
+  </p>
+</footer>
+<script>
+  const form = document.getElementById('compressForm');
+  const downloadSection = document.querySelector('.download-section');
+  const compressBtn = document.getElementById('compressBtn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    downloadSection.innerHTML = ''; // pehle download link hata do
+    compressBtn.disabled = true;     // Button disable karo taaki multiple clicks na ho
+
+    const fileInput = form.querySelector('input[type="file"]');
+    const targetSizeInput = form.querySelector('input[name="target_size_kb"]');
+
+    if (!fileInput.files.length) {
+      alert('Please select a file to compress.');
+      compressBtn.disabled = false;
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('file', fileInput.files[0]);
+    formData.append('target_size_kb', targetSizeInput.value);
+
+    try {
+      const response = await fetch('/compress', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        alert(errorData.error || 'Compression failed.');
+        compressBtn.disabled = false;
+        return;
+      }
+
+      const data = await response.json();
+      const downloadUrl = data.download_url;
+
+      downloadSection.innerHTML = 
+        `<p>Compression successful! <a href="${downloadUrl}" download>Click here to download your compressed image.</a></p>`;
+
+    } catch (err) {
+      alert('Error: ' + err.message);
+    } finally {
+      compressBtn.disabled = false; // Process complete hone par button enable kar do
+    }
+  });
+
+  function toggleMenu() {
+    document.querySelector('nav ul').classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>
